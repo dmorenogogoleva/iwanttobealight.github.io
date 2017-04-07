@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1">
+    <title>HTML Academy: Седона</title>
+    <link href="css/style.min.css" rel="stylesheet">
+    <script>
+      // Picture element HTML5 shiv
+      document.createElement( "picture" );
+    </script>
+    <script src="js/picturefill.js" async>
+    </script>
+  </head>
+  <body>
+  <div class="container">
+    <header class="page-header">
+      <nav class="page-menu page-menu--close">
+        <ul class="page-menu__items  page-menu__items--show">
+          <li class="page-menu__item"><a class="page-menu__link" href="index.html">Главная</a></li>
+          <li class="page-menu__item"><a class="page-menu__link" href="photo.html">Фото и видео</a></li>
+          <li class="page-menu__item"><a class="page-menu__link">Форма отзыва</a></li>
+          <li class="page-menu__item"><a class="page-menu__link" href="#">html academy</a></li>
+        </ul>
+      </nav>
+      <div class="page-header__logo">
+        <picture>
+          <source
+            media="(min-width: 1200px)"
+            srcset="img/logo-sedona-desktop.svg">
+
+          <source
+            media="(min-width: 768px)"
+            srcset="img/logo-sedona-tablet.svg">
+
+          <source
+            type="image/webp"
+            srcset="img/logo-sedona-mobile.svg">
+
+          <source
+            srcset="img/logo-sedona-mobile.svg">
+
+          <img src="img/logo-sedona-mobile.svg" alt="Sedona"/>
+        </picture>
+      </div>
+      <button class="page-header__toggle  page-header__toggle--open" type="button">Открыть меню
+        <svg class="icon  icon--menu" width="23">
+          <use xlink:href="img/symbols.svg#icon-menu"></use>
+        </svg>
+      </button>
+      <button class="page-header__toggle  page-header__toggle--close" type="button">Закрыть меню
+        <svg class="icon  icon--cross" width="23">
+          <use xlink:href="img/symbols.svg#icon-cross"></use>
+        </svg>
+      </button>
+    </header>
+    <main class="page-main">
+      <section class="promo promo--form">
+        <div class="promo__poster">
+          <img src="img/text-sedona.svg" class="promo__poster-text" alt="Welcome to Sedona"  width="284" height="216"/>
+          <svg class="icon  icon--bg-promo" width="320">
+            <use xlink:href="img/symbols.svg#bg-intro-triangle-mobile"></use>
+          </svg>
+        </div>
+        <h1 class="promo__title">Оставьте свой отзыв</h1>
+        <p class="promo__text">
+          Помогите нашим отелям стать лучше! Оставьте отзыв о них, а также о посещенных вами достопримечательностях
+        </p>
+      </section>
+      <form class="main-form" action="https://echo.htmlacademy.ru/" method="get">
+
+        <div class="form__fieldset  field-text  field-text--name">
+          <h2 class="field-text__title">Представьтесь:</h2>
+          <div class="field-text__item-wrap">
+            <label class="field-text__item">
+              <span class="field-text__text">
+                Имя<sup>*</sup>:
+              </span>
+              <input class="field-text__input" type="text"  name="username" placeholder=" " required>
+            </label>
+            <label class="field-text__item">
+              <span class="field-text__text">
+                Фамилия<sup>*</sup>:
+              </span>
+              <input class="field-text__input" type="text"  name="username" placeholder=" " required>
+            </label>
+            <label class="field-text__item">
+              <span class="field-text__text">
+                Отчество:
+              </span>
+              <input class="field-text__input" type="text"  name="username" placeholder=" ">
+            </label>
+          </div>
+        </div>
+
+        <div class="form__fieldset  field-text  field-text--contacts">
+          <h2 class="field-text__title">Контактная информация:</h2>
+          <div class="field-text__item-wrap">
+            <label class="field-text__item">
+              <span class="field-text__text">
+                <span class="field-text__hid"> Контактный </span> телефон  <sup>*</sup>:
+              </span>
+              <span class="field-text__input-wrap">
+                <input class="field-text__input" type="tel" name="contacts" pattern="[0-9]{1}-[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" placeholder="Введите телефон" required>
+                <span class="field-text__wrong-num">Ошибка, перепроверьте номер</span>
+                <span class="field-text__icon field-text__icon&#45;&#45;phone">
+                  <svg class="icon  icon--phone" width="18">
+                    <use xlink:href="img/symbols.svg#icon-phone"></use>
+                  </svg>
+                </span>
+
+              </span>
+            </label>
+            <label class="field-text__item">
+              <span class="field-text__text">
+                Электронная почта<sup>*</sup>:
+              </span>
+              <span class="field-text__input-wrap">
+                <input class="field-text__input" type="email" name="contacts" placeholder="Введите e-mail" required>
+                <span class="field-text__wrong-mail">Ошибка, перепроверьте адрес</span>
+                <span class="field-text__icon field-text__icon&#45;&#45;email">
+                  <svg class="icon  icon--email" width="18">
+                    <use xlink:href="img/symbols.svg#icon-mail"></use>
+                  </svg>
+                </span>
+              </span>
+            </label>
+          </div>
+        </div>
+
+        <div class="field-radio form__fieldset">
+          <h2 class="field-radio__title">Ваше общее впечатление:</h2>
+          <div class="field-radio__item-wrap">
+            <label class="field-radio__item">
+              <input class="field-radio__input" type="radio" name="radio" checked>
+              <span class="field-radio__text">
+                Скорее положительное
+              </span>
+            </label>
+            <label class="field-radio__item">
+              <input class="field-radio__input" type="radio" name="radio">
+              <span class="field-radio__text">
+                Скорее отрицательное
+              </span>
+            </label>
+            <label class="field-radio__item">
+              <input class="field-radio__input" type="radio" name="radio">
+              <span class="field-radio__text">
+                Затрудняюсь ответить
+              </span>
+            </label>
+          </div>
+        </div>
+
+        <div class="field-checkbox form__fieldset">
+          <h2 class="field-checkbox__title">Посещенные достопримечательности:</h2>
+          <div class="field-checkbox__item-wrap">
+            <label class="field-checkbox__item">
+              <input class="field-checkbox__input" type="checkbox" name="checkbox" checked>
+              <span class="field-checkbox__text">
+                Мост Дьявола
+              </span>
+            </label>
+            <label class="field-checkbox__item">
+              <input class="field-checkbox__input" type="checkbox" name="checkbox" checked>
+              <span class="field-checkbox__text">
+                Слайд-парк
+              </span>
+            </label>
+            <label class="field-checkbox__item">
+              <input class="field-checkbox__input" type="checkbox" name="checkbox">
+              <span class="field-checkbox__text">
+                Гора-Колокол
+              </span>
+            </label>
+            <label class="field-checkbox__item">
+              <input class="field-checkbox__input" type="checkbox" name="checkbox" checked>
+              <span class="field-checkbox__text">
+                Красные скалы
+              </span>
+            </label>
+          </div>
+        </div>
+
+        <div class="field-textarea">
+          <h2 class="field-textarea__title">
+            <label for="field-textarea-item">
+              Опишите свои эмоции:
+            </label>
+          </h2>
+          <textarea class="field-textarea__item" name="textarea" id="field-textarea-item" placeholder="Опишите подробно все свои восторги"></textarea>
+        </div>
+
+        <button class="form-button  btn" type="submit">Отправить отзыв</button>
+
+        <div class="main-form__footnote">
+          <p> <sup>*</sup> — обязательные поля </p>
+        </div>
+
+        <div class="popup popup--failure">
+          <div class="popup__field">
+            <h2 class="popup__title">Что-то пошло не так!</h2>
+            <div class="popup__text">
+              Проверьте поля, выделенные красным, скорее всего вы забыли их заполнить
+            </div>
+          </div>
+          <button class="popup-button  popup-button--failure  btn" type="submit">Ок</button>
+        </div>
+
+        <div class="popup popup--success">
+          <div class="popup__field">
+            <h2 class="popup__title">Ваш отзыв отправлен</h2>
+            <div class="popup__text">
+              Спасибо за участие, ваш отзыв уже поступил к нам. В ближайшее время мы опубликуем его на сайте.
+            </div>
+          </div>
+          <div class="popup__btn-wrap">
+            <button class="popup-button popup-button--success btn" type="submit">Закрыть окно</button>
+          </div>
+        </div>
+
+      </form>
+
+    </main>
+    <footer class="page-footer">
+      <p class="page-footer__hashtag">#visitsedona</p>
+      <div class="page-footer__social">
+        <a class="social-btn  social-btn--twitter  btn" href="#">
+          Твиттер
+          <svg class="icon  icon--twitter" width="18">
+            <use xlink:href="img/symbols.svg#icon-twitter"></use>
+          </svg>
+        </a>
+        <a class="social-btn  social-btn--facebook  btn" href="#">
+          Фейсбук
+          <svg class="icon  icon--facebook" width="9">
+            <use xlink:href="img/symbols.svg#icon-facebook"></use>
+          </svg>
+        </a>
+        <a class="social-btn  social-btn--youtube  btn" href="#">
+          Ютуб
+          <svg class="icon  icon--youtube" width="20">
+            <use xlink:href="img/symbols.svg#icon-youtube"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="page-footer__logo">
+        <p class="page-footer__copyright">
+          Разработано
+        </p>
+        <svg class="icon  icon--htmlacademy">
+          <use xlink:href="img/symbols.svg#logo-htmlacademy"></use>
+        </svg>
+      </div>
+    </footer>
+  </div>
+  <script src="js/form.js"></script>
+  <script src="js/index.js"></script>
+  </body>
+</html>
