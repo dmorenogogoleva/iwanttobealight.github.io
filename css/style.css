@@ -456,7 +456,7 @@ template {
   width: 320px;
   height: 27px;
   top: -26px;
-  left: 77px; }
+  left: 0; }
 
 .icon--house {
   fill: #81b3d2;
@@ -624,6 +624,7 @@ textarea:focus {
   margin-right: 12px; }
 
 .page-header__toggle--close {
+  outline: none;
   position: absolute;
   width: 40px;
   height: 40px;
@@ -747,14 +748,14 @@ textarea:focus {
 
 .reason {
   text-align: center;
-  color: #ffffff;
-  position: relative; }
+  color: #ffffff; }
 
 .reason__text-wrapper {
   width: 280px;
   margin: 0 auto;
   padding: 0 20px;
-  background-color: #81b3d2; }
+  background-color: #81b3d2;
+  position: relative; }
 
 .reason__title {
   font-size: 18px;
@@ -1016,13 +1017,13 @@ textarea:focus {
 
 .video__controls {
   margin: 0 auto;
+  width: 280px;
   position: relative;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
-  top: -45px;
-  left: 100px; }
+  top: -45px; }
 
 .video__controls-top {
   width: 280px;
@@ -1528,6 +1529,10 @@ input[placeholder="Опишите подробно все свои востор�
   margin-top: 0;
   margin-bottom: 0; }
 
+.page-footer__copyright:hover + .icon--htmlacademy {
+  cursor: pointer;
+  fill: #81b3d2; }
+
 .social-btn {
   display: inline-block;
   margin-right: 6px;
@@ -1931,13 +1936,14 @@ input[placeholder="Опишите подробно все свои востор�
     width: 415px;
     margin-bottom: 75px; }
   .video__controls{
-    position: absolute;
+    position: relative;
+    margin: 0 auto;
+    width: 650px;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column;
-    top: 86%;
-    left: 15%; }
+    top: -93px; }
   .video__controls-top{
     width: 649px;
     height: 93px;
@@ -2506,8 +2512,9 @@ input[placeholder="Опишите подробно все свои востор�
     width: 410px;
     margin-bottom: 75px; }
   .video__controls{
-    left: 200px;
-    top: 86%; }
+    position: relative;
+    margin: 0 auto;
+    width: 800px; }
   .video__controls-top-scale{
     width: 541px;
     height: 3px;
