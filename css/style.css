@@ -623,6 +623,10 @@ textarea:focus {
   margin-bottom: 0;
   margin-right: 12px; }
 
+.page-header__toggle--open {
+  position: relative;
+  z-index: 2; }
+
 .page-header__toggle--close {
   outline: none;
   position: absolute;
@@ -630,7 +634,8 @@ textarea:focus {
   height: 40px;
   background-color: transparent;
   top: -5%;
-  left: 84%; }
+  left: 84%;
+  z-index: 1; }
 
 .page-menu {
   margin: 0 auto;
@@ -651,7 +656,6 @@ textarea:focus {
   background-color: #81b3d2; }
 
 .page-menu__item {
-  padding: 8px 0;
   box-shadow: 0 1px 0 0 #678fa8, 0 -1px 0 0 #9ac2db; }
 
 .page-menu__item:hover {
@@ -677,11 +681,14 @@ textarea:focus {
   border-bottom: none; }
 
 .page-menu__link {
+  display: block;
   font-size: 18px;
   line-height: 40px;
   font-weight: 700;
   color: #ffffff;
-  text-decoration: none; }
+  text-decoration: none;
+  margin-right: 0;
+  padding: 8px 0; }
 
 .promo {
   text-align: center;
@@ -703,7 +710,8 @@ textarea:focus {
   background-image: url("../img/bg-back-mobile@1x.jpg");
   background-position: bottom;
   background-color: #81b3d2;
-  position: relative; }
+  position: relative;
+  z-index: 3; }
 
 .promo__poster--index {
   height: 389px;
@@ -992,7 +1000,7 @@ textarea:focus {
   width: 320px;
   height: 1px;
   top: -36px;
-  left: 75px;
+  left: 36px;
   background-color: #e6e6e6; }
 
 .video__title {
@@ -1132,12 +1140,14 @@ input[placeholder] {
 .field-text__text {
   margin-right: 10px;
   margin-top: 12px;
-  vertical-align: middle; }
+  vertical-align: middle;
+  width: 170px; }
 
 .field-text__item {
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 21px; }
+  margin-bottom: 21px;
+  width: 280px; }
 
 .field-text__item:nth-of-type(3) {
   margin-bottom: 38px; }
@@ -1154,7 +1164,6 @@ input[placeholder] {
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
-  width: 650px;
   margin-bottom: 40px; }
 
 .field-text--contacts .field-text__item:last-of-type {
@@ -1600,6 +1609,8 @@ input[placeholder="Опишите подробно все свои востор�
   .page-menu__items{
     background-color: transparent;
     box-shadow: none; }
+  .page-menu__items--show{
+    animation: none; }
   .page-menu__item:hover{
     background-color: transparent;
     cursor: pointer; }
@@ -2048,6 +2059,8 @@ input[placeholder="Опишите подробно все свои востор�
     flex-shrink: 1;
     margin-top: 45px;
     margin-bottom: 16px; }
+  .field-text--contacts .field-text__item{
+    width: 650px; }
   .field-text--contacts .field-text__title{
     margin-bottom: 25px;
     padding: 0; }
