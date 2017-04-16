@@ -16,9 +16,11 @@
   color: #000;
   font-size: 25px;
   line-height: 30px;
+  text-decoration: none;
+  border-bottom: 1px dashed #000;
 }
 
 .main-nav__link:hover {
   color: #000;
-  text-decoration: none;
+  border-bottom: none;
 }
