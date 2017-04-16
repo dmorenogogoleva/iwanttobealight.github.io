@@ -10,6 +10,10 @@
   margin-bottom: 40px;
 }
 
+.top-buffer--1 {
+  margin-top: 52px;
+}
+
 h2 {
   font-size: 25px;
 }
