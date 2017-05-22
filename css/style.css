@@ -704,7 +704,7 @@ pre {
   display: block;
   width: 50px;
   height: 50px;
-  margin-right: auto;
+  margin-left: auto;
   background-color: transparent;
   font-size: 0; }
 
@@ -740,7 +740,16 @@ pre {
     top: 30px; } }
 
 .page-footer {
-  padding-bottom: 30px; }
+  padding-bottom: 30px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: justify;
+      justify-content: space-between; }
+
+.page-footer__years {
+  width: 100%; }
 
 .page-footer__link {
   font-size: 0; }
@@ -750,5 +759,7 @@ pre {
   fill: #93afc8; }
 
 @media (min-width: 500px) {
+  .page-footer {
+    display: block; }
   .page-footer__vk {
     margin-left: 220px; } }
