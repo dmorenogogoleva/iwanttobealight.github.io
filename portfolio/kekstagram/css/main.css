@@ -477,17 +477,20 @@ input[type=radio]:checked + .upload-effect-label .upload-effect-preview {
 }
 
 .upload-form-error-hint {
-  content: "";
-  position: fixed;
-  display: block;
-  width: 100%;
-  height: 30px;
-  top: 64%;
-  background-color: #ff2323;
-  color: #fff;
-  line-height: 30px;
-  font-size: 16px;
-  cursor: pointer;
+    content: "";
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 30px;
+    top: 64%;
+    left: 0;
+    background-color: #ff2323;
+    color: #fff;
+    line-height: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 3;
+    text-align: center;
 }
 
 .upload-form-submit:active {
