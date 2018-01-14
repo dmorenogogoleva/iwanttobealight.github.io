@@ -1,0 +1,44 @@
+.tilt {
+  margin: 0 auto;
+  width: 90%;
+  text-align: center; }
+.logo {
+  width: 220px;
+  height: 40px; }
+  .logo__text {
+    fill: #fff;
+    font-family: 'Stem';
+    font-size: 30px;
+    text-shadow: 1px 1px 2px #fff, 0 0 1em #000;
+    stroke-width: 1; }
+.app__link {
+  display: block;
+  margin: 0 auto;
+  max-height: 50px; }
+@font-face {
+  font-family: "Stem";
+  font-weight: 400;
+  src: url(./fonts/STM55.1acaaa2d.woff2) format("woff2"); }
+
+@font-face {
+  font-family: "Stem";
+  font-weight: 700;
+  src: url(./fonts/STM75.8e098c56.woff2) format("woff2"); }
+
+body {
+  font-family: "Stem";
+  width: 100%;
+  height: 50vh;
+  margin: 0;
+  padding: 50vh 0 0 0;
+  background: linear-gradient(45deg, #000000 0%, #475057 45%, #ffffff 55%, #475057 56%, #000000 100%);
+  background-size: 100% 100%;
+  background-repeat: no-repeat; }
+
+@media (max-width: 400px) {
+  body {
+    height: 75vh;
+    margin: 0;
+    padding: 25vh 0 0 0; } }
+
+/*# sourceMappingURL=app.abed9b0aa22bc133df2e32234112a113.css.map*/
