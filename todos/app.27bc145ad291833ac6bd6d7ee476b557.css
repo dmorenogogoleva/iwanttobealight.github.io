@@ -76,14 +76,28 @@
   .app {
     width: 300px; } }
 @font-face {
-  font-family: "Stem";
+  font-family: "Roboto";
+  font-style: normal;
   font-weight: 400;
-  src: url(./fonts/STM55.1acaaa2d.woff2) format("woff2"); }
+  src: url(./fonts/RobotoRegular.18b2429b.woff) format("woff"); }
 
 @font-face {
-  font-family: "Stem";
-  font-weight: bold;
-  src: url(./fonts/STM75.8e098c56.woff2) format("woff2"); }
+  font-family: "RobotoMedium";
+  font-style: normal;
+  font-weight: 500;
+  src: url(./fonts/RobotoMedium.5ca83061.woff) format("woff"); }
+
+@font-face {
+  font-family: "RobotoBold";
+  font-style: normal;
+  font-weight: 700;
+  src: url(./fonts/RobotoBold.af01b503.woff) format("woff"); }
+
+@font-face {
+  font-family: "RobotoLight";
+  font-style: normal;
+  font-weight: 300;
+  src: url(./fonts/RobotoLight.1d638d89.woff) format("woff"); }
 
 * {
   box-sizing: border-box;
@@ -91,9 +105,16 @@
 
 body {
   margin: 0;
-  font-family: 'Stem', 'PT sans', sans-serif;
+  font-family: Roboto, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.2em; }
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: RobotoMedium, Arial, sans-serif; }
 
 ul {
   padding-left: 0;
@@ -109,4 +130,4 @@ button {
 input {
   border: 1px solid #888; }
 
-/*# sourceMappingURL=app.0a2bc7ccd7d3ac9cf80a0152c7bba6ca.css.map*/
+/*# sourceMappingURL=app.27bc145ad291833ac6bd6d7ee476b557.css.map*/
