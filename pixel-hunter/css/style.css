@@ -286,6 +286,8 @@
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between; }
+  .game__content img {
+    object-fit: contain; }
 
 .game__option {
   position: relative;

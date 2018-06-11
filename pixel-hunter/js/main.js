@@ -502,7 +502,7 @@ class GameView extends AbstractView {
         ${this.games.questions.map((question, i) => {
     return `
           <div class="game__option">
-          <img src="${question.url}" alt="Option 1" width="${question.width}" height="${question.height}">
+          <img src="${question.url}" alt="Option ${i + 1}" width="${question.width}" height="${question.height}">
           <label class="game__answer game__answer--photo">
             <input name="question${i + GameData.STEP}" type="radio" value="photo">
             <span>Фото</span>
@@ -535,10 +535,10 @@ class GameView extends AbstractView {
       case GameTypes.TRIPLE:
         layout += `
         <form class="game__content  game__content--triple">
-        ${this.games.questions.map((question) => {
+        ${this.games.questions.map((question, i) => {
     return `
         <div class="game__option game__option--selected">
-          <img src="${question.url}" alt="${question.title}" width="${question.width}" height="${question.height}">
+          <img src="${question.url}" alt="Option ${i + 1}" width="${question.width}" height="${question.height}">
         </div>`;
   }).join(``)}
         </form>`;
