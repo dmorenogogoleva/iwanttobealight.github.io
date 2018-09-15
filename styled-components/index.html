@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>styled-components</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="https://avatars3.githubusercontent.com/u/17782512?s=70&v=4">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css">
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+        }
+    </style>
+</head>
+
+<body class="shower list">
+
+    <header class="caption">
+        <h1>styled-components</h1>
+        <p>Дарья Морено-Гоголева breadhead</p>
+    </header>
+
+    <section class="slide" id="intro">
+        <img src="./pictures/styled-components.png" alt="styled-components" width="300">
+        <p>визуальные примитивы века компонентов</p>
+        <p>используют лучшие части ES6 и CSS для оформления ваших приложений без проблем 💅</p>
+    </section>
+
+    <section class="slide" id="evolution">
+        <h2>зачем</h2>
+        <p class="next">для упорядочивания этого хаотичного css</p>
+        <img src="./pictures/styled-components-evolution.png" alt="styled-components-evolution" class="next">
+    </section>
+
+    <section class="slide">
+        <h2>преимущества</h2>
+        <ol>
+            <li class="next">компонентный подход</li>
+            <li class="next">изоляция стилей</li>
+            <li class="next">сильная связь с js</li>
+            <li class="next">отложенное вычисление</li>
+            <li class="next">тестирование</li>
+        </ol>
+    </section>
+
+    <section class="slide">
+        <h2>главное</h2>
+        <div class="columns two">
+            <div class="code">
+                <p class="next">нет</p>
+                <img class="forbidden next" src="./pictures/forbidden.svg" alt="низя">
+<pre>
+<code>
+.button {
+    <span class="property">background-color:</span> <span class="value">"black"</span><span class="property">;</span>
+    <span class="property">color:</span> <span class="value">"pink"</span><span class="property">;</span>
+}
+
+<<span><span class="tag">button</span> class="<span class="operator">button</span>"</span>>
+    ножми
+<<span><span class="tag">/button</span></span>>
+</code>
+</pre>
+</div>
+<div class="code next">
+<p>да</p>
+<pre class="code-snippet">
+<code>
+<span class="operator">import</span> styled <span class="operator">from</span> 'styled-components';
+
+<span class="property">const</span> Button <span class="operator">=</span> styled.button<span class="value">`</span>
+  <span class="property">background-color:</span> <span class="value">"black"</span><span class="property">;</span>
+  <span class="property">color:</span> <span class="value">"pink"</span><span class="property">;</span>
+<span class="value">`</span>;
+    <<span class="tag">Button</span>> ножми <<span class="tag">/Button</span>>
+    </code>
+</pre>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="slide">
+        <h2>создание</h2>
+<pre class="code-snippet">
+<code><span class="operator">import</span> styled <span class="operator">from</span> 'styled-components';</code>
+<code>&nbsp;</code>
+<code><span class="property">const</span> Button <span class="operator">=</span> styled.button<span class="value">`</span></code>
+<code>  <span class="property">background-color:</span> <span class="value">"black"</span>;</code>
+<code>  <span class="property">color:</span> <span class="value">"pink"</span>;</code>
+<code><span class="value">`</span>;</code>
+</pre>
+    </section>
+
+<section class="slide">
+        <h2>использование</h2>
+        <pre class="code-snippet">
+<code>render (</code>
+<code>  <<span class="operator">React.Fragment</span>></code>
+<code>      <<span class="property">Button</span>> нажми меня <<span class="property">/Button</span>> </code>
+<code>      <<span class="property">Button</span>> не ножимай меня <<span class="property">/Button</span>> </code>
+<code>  <<span class="operator">/React.Fragment</span>></code>
+<code>);</code>
+<button class="button">нажми меня</button>
+<button class="button">не ножимай меня</button>
+        </pre>
+</section>
+
+<section class="slide">
+        <h2>пропсы и интерполяция</h2>
+        <pre class="code-snippet code-snippet-large">
+<code><span class="operator">import</span> styled <span class="operator">from</span> 'styled-components';</code>
+<code>&nbsp;</code>
+<code><span class="property">const</span> Button <span class="operator">=</span> styled.button<span class="value">`</span></code>
+<code>  <span class="property">background-color:</span> ${props <span class="operator">=></span> props.super <span class="property">?</span> <span class="value">"pink"</span> <span class="property">:</span> <span class="value">"black"</span>}<span class="property">;</span></code>
+<code>  <span class="property">color:</span> ${props <span class="operator">=></span> props.super <span class="property">?</span> <span class="value">"black"</span> <span class="property">:</span> <span class="value">"pink"</span>}<span class="property">;</span></code>
+<code><span class="value">`</span>;</code>
+</pre>
+</section>
+
+
+<section class="slide">
+        <h2>пропсы и интерполяция</h2>
+        <pre class="code-snippet code-snippet-large">
+<code><span class="operator">import</span> styled, { css } <span class="operator">from</span> 'styled-components';</code>
+<code>&nbsp;</code>
+<code><span class="property">const</span> Button <span class="operator">=</span> styled.button<span class="value">`</span></code>
+<code>  <span class="property">background-color:</span> <span class="value">black<span class="property">;</span></span></code>
+<code>  <span class="property">color:</span> <span class="value">pink<span class="property">;</span></span></code>
+<code>  ${props <span class="operator">=> </span>props.super <span class="operator">&& </span>css <span class="value">`</span></code>
+<code>      <span class="property">background-color:</span> <span class="value">pink<span class="property">;</span></span></code>
+<code>      <span class="property">color:</span> <span class="value">black<span class="property">;</span></span></code>
+<code>  <span class="value">`</span>}</code>
+<code><span class="value">`</span>;</code>
+</pre>
+</section>
+
+<section class="slide">
+        <h2>пропсы и интерполяция</h2>
+<pre class="code-snippet code-snippet-large">
+<code>render (</code>
+<code>  <<span class="operator">React.Fragment</span>></code>
+<code>      <<span class="property">Button</span>> обычная кнопка <<span class="property">/Button</span>> </code>
+<code>      <<span class="property">Button</span> <span class="value">super</span>> супиркнопка <<span class="property">/Button</span>> </code>
+<code>  <<span class="operator">/React.Fragment</span>></code>
+<code>);</code>
+    </pre>
+    <button class="button">обычная кнопка</button>
+    <button class="button button-super">супиркнопка</button>
+</section>
+
+<section class="slide">
+        <h2>расширение стилей</h2>
+<pre class="code-snippet code-snippet-large">
+<code><span class="operator">import</span> styled <span class="operator">from</span> 'styled-components';</code>
+<code>&nbsp;</code>
+<code><span class="property">const</span> Button <span class="operator">=</span> styled.button<span class="value">`</span></code>
+<code>  <span class="property">background-color:</span> <span class="value">"black"</span><span class="property">;</span></code>
+<code>  <span class="property">color:</span> <span class="value">"pink"</span><span class="property">;</span></code>
+<code><span class="value">`</span>;</code>
+<code>&nbsp;</code>
+<code><span class="property">const</span> LargeButton <span class="operator">=</span> styled(Button)<span class="value">`</span></code>
+<code>  <span class="property">font-size:</span> <span class="value">"40 px"</span><span class="property">;</span></code>
+<code><span class="value">`</span>;</code>
+</pre>
+</section>
+
+<section class="slide">
+        <h2>расширение стилей</h2>
+        <pre class="code-snippet">
+<code>render (</code>
+<code>  <<span class="operator">React.Fragment</span>></code>
+<code>      <<span class="property">Button</span>> кнопка <<span class="property">/Button</span>> </code>
+<code>      <<span class="property">LargeButton</span>> большая кнопка <<span class="property">/LargeButton</span>> </code>
+<code>  <<span class="operator">/React.Fragment</span>></code>
+<code>);</code>
+<button class="button">кнопка</button>
+<button class="button button-tiny">большая кнопка</button>
+</pre>
+</section>
+
+<section class="slide">
+        <h2>темы</h2>
+<pre class="code-snippet code-snippet-large">
+<code><span class="operator">import</span> styled <span class="operator">from</span> 'styled-components';</code>
+<code>&nbsp;</code>
+<code><span class="property">const</span> Button <span class="operator">=</span> styled.button<span class="value">`</span></code>
+<code>  <span class="property">background-color:</span> <span class="value">"black"</span>;</code>
+<code>  <span class="property">color:</span> ${props <span class="operator">=></span> props.theme.main}<span class="property">;</span> </code>
+<code>  <span class="property">border:</span> <span class="value"> 3px solid</span> ${props <span class="operator">=></span> props.theme.main}<span class="property">;</span></code>
+<code><span class="value">`</span>;</code>
+
+<code>Button.defaultProps <span class="operator">=</span> {</code>
+<code>  theme: {</code>
+<code>      <span class="property">main:</span> <span class="value">"pink"</span><span class="property">;</span></code>
+<code>    }</code>
+<code> }</code>
+</pre>
+</section>
+
+<section class="slide">
+    <h2>темы</h2>
+        <div class="columns two">
+<pre class="code-snippet code-snippet-large">
+<code><span class="property">const</span> theme <span class="operator">=</span> {</code>
+<code>  <span class="property">main:</span> <span class="value">"mediumseagreen"</span><span class="property">;</span></code>
+<code>};</code>
+<code>&nbsp;</code>
+<code>render (</code>
+<code>  <<span class="operator">React.Fragment</span>></code>
+<code>      <<span class="property">Button</span>> кнопка <<span class="property">/Button</span>> </code>
+<code>      <<span class="property">ThemeProvider</span> <span class="value">theme</span>={theme}></code>
+<code>          <<span class="property">Button</span>> кнопка с темой <<span class="property">/Button</span>> </code>
+<code>      <<span class="property">/ ThemeProvider</span>> </code>
+<code>  <<span class="operator">/React.Fragment</span>></code>
+<code>);</code>
+</pre>
+<div class="next">
+    <button class="button button-theme-default">кнопка</button>
+    <button class="button button-theme">кнопка с темой</button>
+</div>
+</div>
+</section>
+
+<section class="slide">
+        <h2>вложенные правила</h2>
+        <div class="columns two">
+        <pre class="code-snippet code-snippet-large">
+<code><span class="operator">import</span> styled <span class="operator">from</span> 'styled-components';</code>
+<code>&nbsp;</code>
+<code><span class="property">const</span> Button <span class="operator">=</span> styled.button<span class="value">`</span></code>
+<code>  <span class="property">background-color:</span> <span class="value">"black"</span><span class="property">;</span></code>
+<code>  <span class="property">color:</span> <span class="value">"pink"</span><span class="property">;</span></code>
+<code>&nbsp;</code>
+<code>      <span class="property">&</span>:hover {</code>
+<code>              <span class="property">background-color:</span> <span class="value">"pink"</span><span class="property">;</span></code>
+<code>              <span class="property">color:</span> <span class="value">"black"</span><span class="property">;</span></code>
+<code>      }</code>
+<code><span class="value">`</span>;</code>
+</pre>
+<div class="next"><button class="button button-hovered">кнопка</button></div>
+</div>
+</section>
+
+<section class="slide">
+<h3>воздействие на другие компоненты</h3>
+<div class="columns two">
+<pre class="code-snippet code-snippet-large">
+<code><span class="operator">import</span> styled <span class="operator">from</span> 'styled-components';</code>
+<code>&nbsp;</code>
+<code>  <span class="property">const</span> Wrapper <span class="operator">=</span> styled.div<span class="value">`</span></code>
+<code>    <span class="property">background-color:</span> <span class="value">"lightgray"</span><span class="property">;</span></code>
+<code><span class="value">`</span>;</code>
+<code>&nbsp;</code>
+<code><span class="property">const</span> Button <span class="operator">=</span> styled.button<span class="value">`</span></code>
+<code>  ${Wrapper}<span class="value">:hover &</span> {</code>
+<code>     <span class="property">background-color:</span> <span class="value">"pink"</span><span class="property">;</span></code>
+<code>     <span class="property">color:</span> <span class="value">"black"</span><span class="property">;</span></code>
+<code>     }</code>
+<code><span class="value">`</span>;</code>
+</pre>
+<div class="next">
+    <div class="wrapper-button">
+        <button class="button">кнопка</button>
+    </div>
+</div>
+</div>
+</section>
+
+
+<section class="slide">
+<h2>медиавыражения</h2>
+<div class="columns two">
+<pre class="code-snippet code-snippet-large">
+<code><span class="operator">import</span> styled <span class="operator">from</span> 'styled-components';</code>
+<code>&nbsp;</code>
+<code><span class="property">const</span> Button <span class="operator">=</span> styled.button<span class="value">`</span></code>
+<code>  <span class="property">background-color:</span> <span class="value">"black"</span><span class="property">;</span></code>
+<code>  <span class="property">color:</span> <span class="value">"pink"</span><span class="property">;</span></code>
+<code>&nbsp;</code>
+<code>    <span class="property"><span class="directive">@media</span> (max-width: <span class="value">800px</span>) {</span></code>
+<code>       <span class="property">background-color:</span> <span class="value">"pink"</span><span class="property">;</span></code>
+<code>       <span class="property">color:</span> <span class="value">"black"</span><span class="property">;</span></code>
+<code>   }</code>
+<code><span class="value">`</span>;</code>
+</pre>
+<div class="next"><button class="button button-media">кнопка</button></div>
+</div>
+</section>
+
+<section class="slide">
+<h2>тесты</h2>
+<pre class="code-snippet code-snippet-large">
+<code><span class="operator">import</span> styled <span class="operator">from</span> 'styled-components';</code>
+<code><span class="operator">import</span> renderer <span class="operator">from</span> 'react-test-renderer';</code>
+<code><span class="operator">import</span> 'jest-styled-components';</code>
+<code>&nbsp;</code>
+<code><span class="property">const</span> Button <span class="operator">=</span> styled.button<span class="value">`</span></code>
+<code>      <span class="property">background-color:</span> <span class="value">"black"</span><span class="property">;</span></code>
+<code>      <span class="property">color:</span> <span class="value">"pink"</span><span class="property">;</span></code>
+<code><span class="value">`</span>;</code>
+<code>&nbsp;</code>
+</pre>
+</section>
+
+<section class="slide">
+<h2>тесты</h2>
+<pre class="code-snippet">
+<code>test(<span class="value">'it works'</span>, () <span class="operator">=></span> {</code>
+<code>  <span class="property">const</span> tree <span class="operator">=</span> renderer<span class="value">.create</span>(<<span class="property">Button</span> />)<span class="value">.toJSON</span>()</code>
+<code>      <span class="directive">expect</span>(tree).<span class="value">toMatchSnapshot</span>()</code>
+<code>      <span class="directive">expect</span>(tree).<span class="value">toHaveStyleRule</span>('<span class="operator">background-color</span>', '<span class="operator">black</span>')</code>
+<code>      <span class="directive">expect</span>(tree).<span class="value">toHaveStyleRule</span>('<span class="operator">color</span>', '<span class="operator">pink</span>')</code>
+        })
+</pre>
+</section>
+
+
+<section class="slide">
+<h2>server side rendering</h2>
+<pre class="code-snippet code-snippet-large">
+<code><span class="operator">import</span> { renderToString } <span class="operator">from</span> 'react-dom/server';</code>
+<code><span class="operator">import</span> { ServerStyleSheet } <span class="operator">from</span> 'styled-components';</code>
+<code>&nbsp;</code>
+<code><span class="property">const</span> sheet <span class="operator">=</span> <span class="property">new</span> ServerStyleSheet()</code>
+<code><span class="property">const</span> html <span class="operator">=</span> renderToString(sheet.<span class="value">collectStyles</span>(<<span><span class="property">App</span></span>/>))</code>
+<code>&nbsp;</code>
+<code><span class="property">const</span> styleTags <span class="operator">=</span> sheet.<span class="value">getStyleTags</span>()</code>
+<code><span class="comment">// faster</span></code>
+<code><span class="property">const</span> appStyled <span class="operator">=</span> sheet.<span class="value">collectStyles</span>(app);</code>
+<code><span class="property">const</span> appString <span class="operator">=</span> ReactDOM.<span class="value">renderToString</span>(appStyled);</code>
+</pre>
+</section>
+
+<section class="slide">
+<h2>server side rendering</h2>
+<pre class="code-snippet code-snippet-large">
+<code><span class="property">const</span> styleTags <span class="operator">=</span> sheet.<span class="value">getStyleTags</span>() <span class="comment">// зочем?</span></code>
+<code>&nbsp;</code>
+<code><span class="comment">// faster</span></code>
+<code><span class="property">const</span> scStyles <span class="operator">=</span> sheet.<span class="value">getStyleTags</span>();</code>
+<code><<span class="property">html</span>></code>
+<code>  <<span class="property">head</span>></code>
+<code>    <span class="property">${</span>scStyles<span class="property">}</span></code>
+<code>    <span>...</span></code>
+<code><span class="comment">// html</span></code>
+<code><<span class="property">style</span> <span class="value">data-styled-components</span><span class="operator">=</span>""> <<span class="property">/style</span>></code>
+</pre>
+</section>
+
+
+<section class="slide">
+    <h2>styled-components v4</h2>
+    <ul>
+        <li class="next">скорость монтирования возросла на 25%</li>
+        <li class="next">убит <span class="property">injectGlobal</span> вместо него теперь <span class="property">createGlobalStyle</span></li>
+        <li class="next">нативная поддержка <span class="property">ref</span></li>
+        <li class="next">новое свойство <span class="property">as</span> вместо <span class="property">.withComponent(something)</span></li>
+        <li class="next">полная совместимость со StrictMode React v16</li>
+        <li class="next"><a href="https://github.com/styled-components/babel-plugin-styled-components">typescript babel плагин для styled-components</a></li>
+        <li class="next"><a href="https://www.npmjs.com/package/@types/styled-components">ts-типы</a></li>
+    </ul>
+
+</section>
+
+<section class="slide">
+    <h2>вывод</h2>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+     <p class="next">да вроде норм</p>
+</section>
+
+<section class="slide">
+<h2>вопросы?</h2>
+<div class="next">
+    <p>документация — <a href="https://www.styled-components.com/">styled-components.com</a></p>
+    <p>эта презентация — <a href="https://iwanttobealight.bitbucket.io/styled-components">iwanttobealight.ru/styled-components</a></p>
+    <p>вводная статья — <a href="https://medium.freecodecamp.org/a-5-minute-intro-to-styled-components-41f40eb7cd55">medium.freecodecamp.org/a-5-minute-intro-to-styled-components-41f40eb7cd55</a></p>
+    <p>та же статья на русском — <a href="https://habr.com/company/everydaytools/blog/321804/">habr.com/company/everydaytools/blog/321804</a> </p>
+    <p>что говорят в сообществе — <a href="https://medium.com/@didoo/let-there-be-peace-on-css-8b26829f1be0">medium.com/@didoo/let-there-be-peace-on-css-8b26829f1be0</a></p>
+    <p>styled-components v4 — <a href=" https://habr.com/company/ruvds/blog/422783">habr.com/company/ruvds/blog/422783</a></p>
+
+</div>
+</section>
+
+<section class="slide">
+    <h2>спасибо</h2>
+    <img width="40%" style="margin-top: 10%;" src="./pictures/css-is-awesome.jpg" alt="css-is-awesome">
+</section>
+
+<div class="progress"></div>
+
+<script src="shower/shower.min.js"></script>
+<!-- Copyright © 2018 Yours Truly, Famous Inc. -->
+
+</body>
+
+</html>
