@@ -1,0 +1,49 @@
+body {
+  padding: 50px;
+  font: 14px 'Montserrat', Arial, sans-serif;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+h1 {
+  font-weight: normal;
+}
+
+a {
+  color: #00B7FF;
+}
+
+button {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 18px;
+  padding: 40px 72px;
+  background-color: #ffae3d;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e5911b;
+}
+
+button:active {
+  background-color: #c97500;
+}
+
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+}
+
+.controls {
+  align-self: flex-start;
+}
+
+img {
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
