@@ -655,7 +655,7 @@ pre {
   color: #6988b3; }
 
 .catalog-item__text {
-  margin: 0; }
+  margin: 0 40px 0 0; }
 
 .catalog-item .toggle-show {
   display: block; }
@@ -682,7 +682,11 @@ pre {
     width: 80%; }
   __name {
     margin-bottom: 10px;
-    font-size: 22px; } }
+    font-size: 22px; } 
+    
+    .catalog-item__text {
+      margin: 0; }
+    }
 
 .about {
   padding: 20px 0; }
