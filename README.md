@@ -1,7 +1,6 @@
 # iwanttobealight.github.io
 
-extremely old portfolio
-
+стишочки и портфолио из 2017
 https://iwanttobealight.github.io <br/>
 наше всё этого гитхаб-аккаунта<br/>
 
